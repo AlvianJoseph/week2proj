@@ -10,7 +10,7 @@ function getRandomInt(min, max) {
 
 var firstAndPike = {
   id: 'first-and-pike',
-  maxCookiesSold: 100,
+  maxCookiesSold: 410,
   cookiesSoldThisHour: 0,
   cookiesEachHour: [],
 
@@ -23,8 +23,8 @@ var firstAndPike = {
 
   cookiesSoldEachHour: function () {
     for (var i = 0; i < hours.length; i++) {
-      var customersThisHour = getRandomInt(this.maxCustomersPerHour);
-      var cookiesSoldThisHour = getRandomInt(this.maxCookiesSold);
+      customersThisHour = getRandomInt(this.maxCustomersPerHour);
+      cookiesSoldThisHour = getRandomInt(this.maxCookiesSold);
       this.totalCookiesSold += cookiesSoldThisHour;
       this.customersEachHour.push(customersThisHour)
       this.cookiesEachHour.push(cookiesSoldThisHour)
@@ -52,7 +52,7 @@ firstAndPike.render = function () {
 
 var seatacAirport = {
   id: 'seatac-airport',
-  maxCookiesSold: 100,
+  maxCookiesSold: 29,
   cookiesSoldThisHour: 0,
   cookiesEachHour: [],
 
@@ -93,7 +93,7 @@ seatacAirport.render = function () {
 
 var seattleCenter = {
   id: 'seattle-center',
-  maxCookiesSold: 100,
+  maxCookiesSold: 141,
   cookiesSoldThisHour: 0,
   cookiesEachHour: [],
 
@@ -134,7 +134,7 @@ seattleCenter.render = function () {
 
 var capitolHill = {
   id: 'capitol-hill',
-  maxCookiesSold: 100,
+  maxCookiesSold: 87,
   cookiesSoldThisHour: 0,
   cookiesEachHour: [],
 
@@ -175,7 +175,7 @@ capitolHill.render = function () {
 
 var alki = {
   id: 'alki',
-  maxCookiesSold: 100,
+  maxCookiesSold: 74,
   cookiesSoldThisHour: 0,
   cookiesEachHour: [],
 
