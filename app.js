@@ -1,49 +1,266 @@
 'use strict';
 
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+var maxCustomersPerHour = 0;
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(maxCustomersPerHour);
+  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+}
 
-var months = ['Jan', 'Feb', 'March'];
+var firstAndPike = {
+  id: 'first-and-pike',
+  maxCookiesSold: 100,
+  cookiesSoldThisHour: 0,
+  cookiesEachHour: [],
 
+  maxCustomersPerHour: 65,
+  customersThisHour: 0,
+  customersEachHour: [],
 
-// Vinicio - all of the variables and functions related to 2017 are going to live here
-var twoThousandSeventeen = {
-  kms: [2, 4, 5],
-  id: 'ul2017',
-  render: function() {
-    // Vinicio - this function will be in charge of displaying elements into the screen by changing the dome.
+  //avgCookiesPerHour: 0,
+  totalCookiesSold: 0,
 
-    for(var i =0; i < this.kms.length; i++) {
-      // Vinicio - 1 - getting a reference to a part I want to change
-      var referenceUl = document.getElementById(this.id);
+  cookiesSoldEachHour: function () {
+    for (var i = 0; i < hours.length; i++) {
+      var customersThisHour = getRandomInt(this.maxCustomersPerHour);
+      var cookiesSoldThisHour = getRandomInt(this.maxCookiesSold);
+      this.totalCookiesSold += cookiesSoldThisHour;
+      this.customersEachHour.push(customersThisHour)
+      this.cookiesEachHour.push(cookiesSoldThisHour)
+      // var avgCookiesPerHour = Math.round(this.totalCookiesSold/hours.length);
+      console.log(`At ${hours[i]} you sold ${this.cookiesEachHour[i]} cookies to ${this.customersEachHour[i]} customers.`);
 
-      //Vinicio - 2 - Creating the new element
-      var newElement = document.createElement('li'); 
-      newElement.textContent = `In ${months[i]}, I ran ${this.kms[i]} Kilometers.`; 
+    } console.log(`You sold ${this.totalCookiesSold} cookies in total`);
 
-      //Vinicio - Add the element to your reference
-      referenceUl.append(newElement);
-    }
-  },
+  }
 };
 
-var twoThousandEighteen = {
-  kms: [12, 14, 15],
-  id: 'ul2018',
-  render: function() {
-    // Vinicio - this function will be in charge of displaying elements into the screen by changing the dome.
+firstAndPike.render = function () {
+  var referenceUl = document.getElementById(this.id);
+  for (var i = 0; i < hours.length; i++) {
 
-    for(var i =0; i < this.kms.length; i++) {
-      // Vinicio - 1 - getting a reference to a part I want to change
-      var referenceUl = document.getElementById(this.id);
+    var newElement = document.createElement('li');
+    newElement.textContent = `At ${hours[i]} you sold ${this.cookiesEachHour[i]} cookies to ${this.customersEachHour[i]} customers.`;
+    referenceUl.append(newElement);
+  }
+  newElement = document.createElement('li');
+  newElement.textContent = `You sold ${this.totalCookiesSold} cookies in total`;
+  referenceUl.append(newElement);
+}
 
-      //Vinicio - 2 - Creating the new element
-      var newElement = document.createElement('li'); 
-      newElement.textContent = `In ${months[i]}, I ran ${this.kms[i]} Kilometers.`; 
 
-      //Vinicio - Add the element to your reference
-      referenceUl.append(newElement);
-    }
-  },
+var seatacAirport = {
+  id: 'seatac-airport',
+  maxCookiesSold: 100,
+  cookiesSoldThisHour: 0,
+  cookiesEachHour: [],
+
+  maxCustomersPerHour: 24,
+  customersThisHour: 0,
+  customersEachHour: [],
+
+  //avgCookiesPerHour: 0,
+  totalCookiesSold: 0,
+
+  cookiesSoldEachHour: function () {
+    for (var i = 0; i < hours.length; i++) {
+      var customersThisHour = getRandomInt(this.maxCustomersPerHour);
+      var cookiesSoldThisHour = getRandomInt(this.maxCookiesSold);
+      this.totalCookiesSold += cookiesSoldThisHour;
+      this.customersEachHour.push(customersThisHour)
+      this.cookiesEachHour.push(cookiesSoldThisHour)
+      // var avgCookiesPerHour = Math.round(this.totalCookiesSold/hours.length);
+      console.log(`At ${hours[i]} you sold ${this.cookiesEachHour[i]} cookies to ${this.customersEachHour[i]} customers.`);
+
+    } console.log(`You sold ${this.totalCookiesSold} cookies in total`);
+
+  }
 };
 
-twoThousandSeventeen.render();
-twoThousandEighteen.render();
+seatacAirport.render = function () {
+  var referenceUl = document.getElementById(this.id);
+  for (var i = 0; i < hours.length; i++) {
+
+    var newElement = document.createElement('li');
+    newElement.textContent = `At ${hours[i]} you sold ${this.cookiesEachHour[i]} cookies to ${this.customersEachHour[i]} customers.`;
+    referenceUl.append(newElement);
+  }
+  newElement = document.createElement('li');
+  newElement.textContent = `You sold ${this.totalCookiesSold} cookies in total`;
+  referenceUl.append(newElement);
+}
+
+var seattleCenter = {
+  id: 'seattle-center',
+  maxCookiesSold: 100,
+  cookiesSoldThisHour: 0,
+  cookiesEachHour: [],
+
+  maxCustomersPerHour: 38,
+  customersThisHour: 0,
+  customersEachHour: [],
+
+  //avgCookiesPerHour: 0,
+  totalCookiesSold: 0,
+
+  cookiesSoldEachHour: function () {
+    for (var i = 0; i < hours.length; i++) {
+      var customersThisHour = getRandomInt(this.maxCustomersPerHour);
+      var cookiesSoldThisHour = getRandomInt(this.maxCookiesSold);
+      this.totalCookiesSold += cookiesSoldThisHour;
+      this.customersEachHour.push(customersThisHour)
+      this.cookiesEachHour.push(cookiesSoldThisHour)
+      // var avgCookiesPerHour = Math.round(this.totalCookiesSold/hours.length);
+      console.log(`At ${hours[i]} you sold ${this.cookiesEachHour[i]} cookies to ${this.customersEachHour[i]} customers.`);
+
+    } console.log(`You sold ${this.totalCookiesSold} cookies in total`);
+
+  }
+};
+
+seattleCenter.render = function () {
+  var referenceUl = document.getElementById(this.id);
+  for (var i = 0; i < hours.length; i++) {
+
+    var newElement = document.createElement('li');
+    newElement.textContent = `At ${hours[i]} you sold ${this.cookiesEachHour[i]} cookies to ${this.customersEachHour[i]} customers.`;
+    referenceUl.append(newElement);
+  }
+  newElement = document.createElement('li');
+  newElement.textContent = `You sold ${this.totalCookiesSold} cookies in total`;
+  referenceUl.append(newElement);
+}
+
+var capitolHill = {
+  id: 'capitol-hill',
+  maxCookiesSold: 100,
+  cookiesSoldThisHour: 0,
+  cookiesEachHour: [],
+
+  maxCustomersPerHour: 38,
+  customersThisHour: 0,
+  customersEachHour: [],
+
+  //avgCookiesPerHour: 0,
+  totalCookiesSold: 0,
+
+  cookiesSoldEachHour: function () {
+    for (var i = 0; i < hours.length; i++) {
+      var customersThisHour = getRandomInt(this.maxCustomersPerHour);
+      var cookiesSoldThisHour = getRandomInt(this.maxCookiesSold);
+      this.totalCookiesSold += cookiesSoldThisHour;
+      this.customersEachHour.push(customersThisHour)
+      this.cookiesEachHour.push(cookiesSoldThisHour)
+      // var avgCookiesPerHour = Math.round(this.totalCookiesSold/hours.length);
+      console.log(`At ${hours[i]} you sold ${this.cookiesEachHour[i]} cookies to ${this.customersEachHour[i]} customers.`);
+
+    } console.log(`You sold ${this.totalCookiesSold} cookies in total`);
+
+  }
+};
+
+capitolHill.render = function () {
+  var referenceUl = document.getElementById(this.id);
+  for (var i = 0; i < hours.length; i++) {
+
+    var newElement = document.createElement('li');
+    newElement.textContent = `At ${hours[i]} you sold ${this.cookiesEachHour[i]} cookies to ${this.customersEachHour[i]} customers.`;
+    referenceUl.append(newElement);
+  }
+  newElement = document.createElement('li');
+  newElement.textContent = `You sold ${this.totalCookiesSold} cookies in total`;
+  referenceUl.append(newElement);
+}
+
+var alki = {
+  id: 'alki',
+  maxCookiesSold: 100,
+  cookiesSoldThisHour: 0,
+  cookiesEachHour: [],
+
+  maxCustomersPerHour: 16,
+  customersThisHour: 0,
+  customersEachHour: [],
+
+  //avgCookiesPerHour: 0,
+  totalCookiesSold: 0,
+
+  cookiesSoldEachHour: function () {
+    for (var i = 0; i < hours.length; i++) {
+      var customersThisHour = getRandomInt(this.maxCustomersPerHour);
+      var cookiesSoldThisHour = getRandomInt(this.maxCookiesSold);
+      this.totalCookiesSold += cookiesSoldThisHour;
+      this.customersEachHour.push(customersThisHour)
+      this.cookiesEachHour.push(cookiesSoldThisHour)
+      // var avgCookiesPerHour = Math.round(this.totalCookiesSold/hours.length);
+      console.log(`At ${hours[i]} you sold ${this.cookiesEachHour[i]} cookies to ${this.customersEachHour[i]} customers.`);
+
+    } console.log(`You sold ${this.totalCookiesSold} cookies in total`);
+
+  }
+};
+
+alki.render = function () {
+  var referenceUl = document.getElementById(this.id);
+  for (var i = 0; i < hours.length; i++) {
+
+    var newElement = document.createElement('li');
+    newElement.textContent = `At ${hours[i]} you sold ${this.cookiesEachHour[i]} cookies to ${this.customersEachHour[i]} customers.`;
+    referenceUl.append(newElement);
+  }
+  newElement = document.createElement('li');
+  newElement.textContent = `You sold ${this.totalCookiesSold} cookies in total`;
+  referenceUl.append(newElement);
+}
+
+var firstAndPike = {
+  id: 'first-and-pike',
+  maxCookiesSold: 100,
+  cookiesSoldThisHour: 0,
+  cookiesEachHour: [],
+
+  maxCustomersPerHour: 65,
+  customersThisHour: 0,
+  customersEachHour: [],
+
+  //avgCookiesPerHour: 0,
+  totalCookiesSold: 0,
+
+  cookiesSoldEachHour: function () {
+    for (var i = 0; i < hours.length; i++) {
+      var customersThisHour = getRandomInt(this.maxCustomersPerHour);
+      var cookiesSoldThisHour = getRandomInt(this.maxCookiesSold);
+      this.totalCookiesSold += cookiesSoldThisHour;
+      this.customersEachHour.push(customersThisHour)
+      this.cookiesEachHour.push(cookiesSoldThisHour)
+      // var avgCookiesPerHour = Math.round(this.totalCookiesSold/hours.length);
+      console.log(`At ${hours[i]} you sold ${this.cookiesEachHour[i]} cookies to ${this.customersEachHour[i]} customers.`);
+
+    } console.log(`You sold ${this.totalCookiesSold} cookies in total`);
+
+  }
+};
+
+firstAndPike.render = function () {
+  var referenceUl = document.getElementById(this.id);
+  for (var i = 0; i < hours.length; i++) {
+
+    var newElement = document.createElement('li');
+    newElement.textContent = `At ${hours[i]} you sold ${this.cookiesEachHour[i]} cookies to ${this.customersEachHour[i]} customers.`;
+    referenceUl.append(newElement);
+  }
+  newElement = document.createElement('li');
+  newElement.textContent = `You sold ${this.totalCookiesSold} cookies in total`;
+  referenceUl.append(newElement);
+}
+firstAndPike.cookiesSoldEachHour();
+firstAndPike.render();
+seatacAirport.cookiesSoldEachHour();
+seatacAirport.render();
+seattleCenter.cookiesSoldEachHour();
+seattleCenter.render();
+capitolHill.cookiesSoldEachHour();
+capitolHill.render();
+alki.cookiesSoldEachHour();
+alki.render();
