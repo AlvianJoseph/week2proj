@@ -2,7 +2,6 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="salmon-cookies.css">
   <title>Salmon Cookie Sales</title>
 </head>
@@ -11,8 +10,10 @@
   <table id="cookie-table">
     <caption>Salmon Cookie Sales</caption>
     <tbody>
+      <tfoot id="footer">
 
-    </tbody>
+      </tfoot>
+    </tbody>  
   </table>
   <form id="store-form" action="">
     <fieldset>
@@ -25,9 +26,6 @@
 
       <label for="avg-cookies-sold">Average Cookies Sold:</label>
       <input id="avgcookiessold" type="number" required/>
-
-      <label for="total-cookies-sold">Total Cookies Sold:</label>
-      <input id="totalcookiessold" type="number" required/>
 
       <label for="store-name">Store Name:</label>
       <input id="storename" type="text" required/>
