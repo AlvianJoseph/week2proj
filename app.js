@@ -26,16 +26,19 @@ function Store(minimumCustomersPerHour, maxCustomersPerHour, averageCookiesPerPe
   this.render = function () {
     var referenceTable = document.getElementById('cookie-table');
     var tr = document.createElement('tr');
-    var td = document.createElement('td');
-    td.textContent = storeLocation;
-    tr.append(td);
+    var tdLocation = document.createElement('td');
+    tdLocation.textContent = storeLocation;
+    tr.append(tdLocation);
 
     for (var i = 0; i < storeHours.length; i++) {
-      td = document.createElement('td')
-      td.textContent = this.cookiesEachHourArray[i];
-      tr.append(td);
-      referenceTable.append(tr);
-    }
+      var tdCookiesSold = document.createElement('td')
+      tdCookiesSold.textContent = this.cookiesEachHourArray[i];
+      tr.append(tdCookiesSold);
+       }
+       var tdTotal = document.createElement('td');
+       tdTotal.textContent = this.totalCookiesSold;
+       tr.append(tdTotal);
+       referenceTable.append(tr);
   };
 
   // doing all the math
@@ -62,7 +65,7 @@ function Store(minimumCustomersPerHour, maxCustomersPerHour, averageCookiesPerPe
 function renderHeader() {
   var headerRow = document.createElement('tr');
   var headerSpace = document.createElement('th');
-  headerSpace.textContent= '';
+  headerSpace.textContent = '';
   headerRow.append(headerSpace);
 
   for (var i = 0; i < storeHours.length; i++) {
@@ -71,7 +74,7 @@ function renderHeader() {
     headerRow.append(headerValue);
   }
   var headerTotal = document.createElement('th');
-  headerTotal.textContent= 'Daily Total';
+  headerTotal.textContent = 'Daily Total';
   headerRow.append(headerTotal);
 
 
