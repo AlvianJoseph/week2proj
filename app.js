@@ -11,7 +11,7 @@ function Store(minimumCustomersPerHour, maxCustomersPerHour, averageCookiesPerPe
   this.minimumCustomersPerHour = minimumCustomersPerHour;
   this.maxCustomersPerHour = maxCustomersPerHour;
   this.averageCookiesPerPerson = averageCookiesPerPerson;
-  this.totalCookiesSold = totalCookiesSold;
+  this.totalCookiesSold = 0;
   this.storeLocation = storeLocation;
   this.customersEachHourArray = [];
   this.cookiesEachHourArray = [];
