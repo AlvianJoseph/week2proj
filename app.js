@@ -60,14 +60,17 @@ function Store(minimumCustomersPerHour, maxCustomersPerHour, averageCookiesPerPe
 
 // create headers by appending th to a new row
 function renderHeader() {
-  var trHeader = document.createElement('tr');
+  var headerRow = document.createElement('tr');
+  var headerSpace = document.createElement('th');
+  headerSpace.textContent= '';
+  headerRow.append(headerSpace);
   for (var i = 0; i < storeHours.length; i++) {
-    var th = document.createElement('th');
-    th.textContent = storeHours[i];
-    trHeader.append(th);
+    var headerValue = document.createElement('th');
+    headerValue.textContent = storeHours[i];
+    headerRow.append(headerValue);
   }
   var referenceTable = document.getElementById('cookie-table');
-  referenceTable.append(trHeader);
+  referenceTable.append(headerRow);
 }
 renderHeader();
 
