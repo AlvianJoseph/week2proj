@@ -30,6 +30,8 @@ function Store(minimumCustomersPerHour, maxCustomersPerHour, averageCookiesPerPe
     tdLocation.textContent = storeLocation;
     tr.append(tdLocation);
 
+   
+
     for (var i = 0; i < storeHours.length; i++) {
       var tdCookiesSold = document.createElement('td')
       tdCookiesSold.textContent = this.cookiesEachHourArray[i];
@@ -39,6 +41,10 @@ function Store(minimumCustomersPerHour, maxCustomersPerHour, averageCookiesPerPe
        tdTotal.textContent = this.totalCookiesSold;
        tr.append(tdTotal);
        referenceTable.append(tr);
+
+       var totalRow = document.createElement('tr');
+       totalRow.textContent = 'Total'
+       referenceTable.append(totalRow);
   };
 
   // doing all the math
