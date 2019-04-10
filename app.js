@@ -64,11 +64,17 @@ function renderHeader() {
   var headerSpace = document.createElement('th');
   headerSpace.textContent= '';
   headerRow.append(headerSpace);
+
   for (var i = 0; i < storeHours.length; i++) {
     var headerValue = document.createElement('th');
     headerValue.textContent = storeHours[i];
     headerRow.append(headerValue);
   }
+  var headerTotal = document.createElement('th');
+  headerTotal.textContent= 'Daily Total';
+  headerRow.append(headerTotal);
+
+
   var referenceTable = document.getElementById('cookie-table');
   referenceTable.append(headerRow);
 }
