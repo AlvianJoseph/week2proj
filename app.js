@@ -41,7 +41,6 @@ function Store(minimumCustomersPerHour, maxCustomersPerHour, averageCookiesPerPe
     referenceTable.append(tr);
   };
 
-
   this.calculateTotals = function () {
     for (var i = 0; i < storeHours.length; i++) {
       var cookiesSold = this.cookiesSoldEachHour();
@@ -137,3 +136,5 @@ function calculateFooterTotals() {
   console.log(`The grand daily total is ${grandTotal}`);
   console.log(`The total cookies sold at ${storeHours[c]} is ${columnSum}`);
 }
+
+calculateFooterTotals();
