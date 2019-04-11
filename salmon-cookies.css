@@ -1,16 +1,49 @@
-table {
-    border: 2px solid black;
-    border-spacing: 5px;
-    width: 50%;
-    position: absolute;
-    left: 25%;
-    top: 20%
+body{
+    background-color: #b48e8e
 }
-  
-th {
-    height: 100px;
-    border: transparent;
-  }
+caption{
+    font-size: 25px;
+    background: #EBEBEB;
+}
 
-  
+img{
+    position: absolute;
+    top: 60%;
+    left: 23%;
+}
+table {
+  border: 2px solid #FFFFFF;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  width: 50%;
+  position: absolute;
+  left: 23%;
+  top: 20%;
+}
+table td, table th {
+  border: 2px solid #FFFFFF;
+  padding: 3px 4px;
+}
+table {
+  font-size: 14px;
+  font-weight: bold;
+}
+td:nth-child(even) {
+  background: #EBEBEB;
+}
 
+ th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  border-left: 2px solid #333333;
+}
+
+tfoot {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+  border-top: 3px solid #333333;
+}
