@@ -12,7 +12,7 @@ function Store(minimumCustomersPerHour, maxCustomersPerHour, averageCookiesPerPe
   this.maxCustomersPerHour = maxCustomersPerHour;
   this.averageCookiesPerPerson = averageCookiesPerPerson;
   this.storeLocation = storeLocation;
-  this.totalCookiesSold = 0;
+  
 
   this.customersEveryHour = function () {
     return getRandomInt(this.minimumCustomersPerHour, this.maxCustomersPerHour);
@@ -22,7 +22,22 @@ function Store(minimumCustomersPerHour, maxCustomersPerHour, averageCookiesPerPe
     return Math.round(this.customersEveryHour() * this.averageCookiesPerPerson);
   };
 
-  this.render = function () {
+  this.customersEachHourArray = [];
+  this.cookiesEachHourArray = [];
+  this.totalCookiesSold = 0;
+  this.calculateTotals = function () {
+    for (var i = 0; i < storeHours.length; i++) {
+      var cookiesSold = this.cookiesSoldEachHour();
+      this.totalCookiesSold += cookiesSold;
+      var customersThisHour = this.customersEveryHour();
+      this.customersEachHourArray.push(customersThisHour)
+      this.cookiesEachHourArray.push(cookiesSold)
+      console.log(`At ${storeHours[i]} you sold ${this.cookiesEachHourArray[i]} cookies to ${this.customersEachHourArray[i]} customers.`);
+      console.log(`You sold ${this.totalCookiesSold} cookies in total`);
+    }
+  }
+
+  this.renderTableData = function () {
     var referenceTable = document.getElementById('cookie-table');
     var tr = document.createElement('tr');
     var tdLocation = document.createElement('td');
@@ -39,25 +54,11 @@ function Store(minimumCustomersPerHour, maxCustomersPerHour, averageCookiesPerPe
     referenceTable.append(tr);
   };
 
-  this.customersEachHourArray = [];
-  this.cookiesEachHourArray = [];
-  this.calculateTotals = function () {
-    for (var i = 0; i < storeHours.length; i++) {
-      var cookiesSold = this.cookiesSoldEachHour();
-      this.totalCookiesSold += cookiesSold;
-      var customersThisHour = this.customersEveryHour();
-      this.customersEachHourArray.push(customersThisHour)
-      this.cookiesEachHourArray.push(cookiesSold)
-      console.log(`At ${storeHours[i]} you sold ${this.cookiesEachHourArray[i]} cookies to ${this.customersEachHourArray[i]} customers.`);
-      console.log(`You sold ${this.totalCookiesSold} cookies in total`);
-    }
-  }
-
   this.dailySalesData = function () {
     this.customersEveryHour();
     this.cookiesSoldEachHour();
     this.calculateTotals();
-    this.render();
+    this.renderTableData();
   }
 };
 
@@ -88,6 +89,7 @@ function addNewStore(event) {
   var newMaxCustomerData = event.target.maxcustomers.value;
   var newAvgCookieData = event.target.avgcookiessold.value;
   var newStoreName = event.target.storename.value;
+  
   var newStore = new Store(newMinCustomerData, newMaxCustomerData, newAvgCookieData, newStoreName);
 
   referenceTable = document.getElementById('footer');
