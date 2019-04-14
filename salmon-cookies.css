@@ -7,60 +7,6 @@ caption{
   background: #EBEBEB;
 }
 
-#big-salmon{
-position: absolute;
-width: 25%;
-left:37.5%;
-top: 80%;
-z-index: 1;
-}
-
-#left-body-text{
-position: absolute;
-top: 7.5%;
-background-color: black;
-width: 19%;
-border: 2px solid black;
-color: white;
-height: 64%;
-text-align: center;
-color: white;
-}
-
-#right-body-text{
-position: absolute;
-top: 7.5%;
-background-color: black;
-width: 19%;
-border: 2px solid black;
-color: white;
-height: 64%;
-left: 80%;
-text-align: center;
-color: white;
-font-size: 14px;
-}
-
-#family{
-position: absolute;
-top: 10%;
-left: 22.5%;
-width: 55%;
-}
-
-#oprah {
-  display: inline-block;
-  width: 20%;
-  border: 5px solid #000;
-  text-align: left;
-  position: absolute;
-  top: 9%;
-  left: 23%;
-  background-color: #000;
-  color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 13.5px;
-  }
 
 table {
 border: 2px solid #FFFFFF;
