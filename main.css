@@ -1,0 +1,122 @@
+html, body{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: auto;
+}
+
+header{
+width: 75%;
+margin: auto;
+text-align: center;
+padding: 20px;
+}
+
+h1{
+    font-size: 60px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: salmon;
+}
+
+h3{
+    font-weight: bold;
+    font-style: italic;
+}
+
+#bigsalmon{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+
+nav{
+    width: 99%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#navbar{
+    width: 99%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+a{
+    color: white;
+}
+
+th{
+    color: white;
+    background-color: black;
+}
+
+#family{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+
+#family img{
+    width: 100%;
+}
+
+main{
+    padding-top: 50px;
+}
+
+h2{
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-top: 30px;
+}
+
+#chinook{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#hours{
+    text-align: center;
+    padding-bottom: .5px;
+    padding-top: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+#hourstable{
+    width: 99%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 0px;
+}
+
+#locationlist{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: auto;
+    text-align: center;
+    list-style-position: inside;
+    list-style-type: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#locations{
+   text-align: center;
+   font-size: 30px;
+   font-weight: bold;
+   font-style: oblique;
+}
+#frosted, #cutter, #fish{
+    width: 100px;
+}
